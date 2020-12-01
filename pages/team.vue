@@ -1,12 +1,12 @@
 <template>
-  <div class="layout" :class="{ 'sticky-header': $route.path === '/something' }">
+  <div>
     <Header />
     <Hero :title="title" :content="pages" />
     <ContentGrid :title="title" :content="pages" />
-    <slot/>
     <Footer />
   </div>
 </template>
+
 
 <script>
 import Header from "@/components/Header"
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       pages:[], //query result
-      title: "Value" //page title
+      title: "Team" //page title
     };
   },
   apollo: {
@@ -41,6 +41,7 @@ export default {
   }
 }
 </script>
+
 
 
 <style>
@@ -73,7 +74,7 @@ h1 {
   padding: 0;
 }
 .layout.sticky-header {
-  padding: 0 0 0 0;
+  padding: 6rem 0 0 0;
 }
 .container {
   max-width: 1200px;
